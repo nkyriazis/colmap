@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  app:
+    build: .
+    environment:
+      DISPLAY: $DISPLAY
+    volumes:
+      - .:/working
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    runtime: nvidia
+    command: bash
